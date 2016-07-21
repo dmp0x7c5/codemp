@@ -44,7 +44,7 @@ postgresql_extensions:
 delayed_job_command: script/delayed_job run
 sidekiq_command: sidekiq
 resque_command: rake resque:work
-server_type: nginx_unicorn
+server_type: nginx_passenger
 git_url: git@github.com:dmp0x7c5/codemp.git
 sidekiq_app_name: codemp-sidekiq
 

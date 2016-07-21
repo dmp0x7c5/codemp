@@ -32,7 +32,7 @@
 
 - hosts: sidekiq
   handlers:
-    - include: roles/unicorn/handlers/main.yml
+    - include: roles/passenger/handlers/main.yml
   roles:
     - base
     - ruby

@@ -1,5 +1,5 @@
 ---
-- include_vars: ../../unicorn/defaults/main.yml
+- include_vars: ../../passenger/defaults/main.yml
 - include_vars: ../../sidekiq/defaults/main.yml
 
 - set_fact: this_release_path={{ releases_path }}/{{ lookup('pipe', 'date +%Y%m%d%H%M%S') }}
@@ -25,7 +25,7 @@
   with_items:
     - config/database.yml
     - config/secrets.yml
-    - config/unicorn.{{ rails_env }}.rb
+    - config/passenger.{{ rails_env }}.rb
     - log
     - tmp
     - vendor/bundle
