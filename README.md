@@ -22,3 +22,5 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+Railsbox: https://railsbox.io/boxes/50c739f31477
