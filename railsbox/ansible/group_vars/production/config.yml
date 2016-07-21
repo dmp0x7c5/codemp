@@ -1,0 +1,11 @@
+---
+rails_env: production
+target: server
+vm_memory:
+vm_swap: 512
+vm_cores:
+vm_share_type:
+vm_ip:
+host: 46.101.149.107
+port: 22
+username: app

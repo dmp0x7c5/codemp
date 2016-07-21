@@ -1,0 +1,13 @@
+- include: rvm.yml
+- include: rubies.yml
+
+- name: Install bundler
+  command: /bin/bash -l -c 'gem install bundler --no-ri --no-rdoc'
+  become: yes
+  become_user: '{{ rvm1_user }}'
+
+- name: bundle install
+  command: /bin/bash -l -c 'bundle install' chdir={{ app_path }}
+  become: yes
+  become_user: '{{ rvm1_user }}'
+  when: target == 'virtualbox'
