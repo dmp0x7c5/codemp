@@ -18,7 +18,7 @@ packages:
   - qt5-default
   - libqt5webkit5-dev
 manual_ruby_version: 2.3.1
-server_name: localhost
+server_name: thefirst
 rails_version: 5
 ruby_install: rvm
 ruby_version: 2.3.1
