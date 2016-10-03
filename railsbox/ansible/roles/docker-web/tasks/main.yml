@@ -1,5 +1,13 @@
+# DOCKER PART
+
+- name: Do not use internal bundle because it conflicts inside container TIL-how to remove files using ansible
+  file: path=/codemp/current/vendor/bundle state=absent
+
 - name: Create build codemp_prod_image
   command: docker build -f /codemp/current/docker/Dockerfile.prod -t codemp_prod_image /codemp/current/
 
+- name: Make sure that host nginx is not running
+  command: /etc/init.d/nginx stop
+
 - name: Run docker codemp_prod_container
-  command: docker run -p 127.0.0.1:80:80 --name codemp_prod_container -t codemp_prod_image
+  command: docker run -d -p :80:80 --name codemp_prod_container -t codemp_prod_image
