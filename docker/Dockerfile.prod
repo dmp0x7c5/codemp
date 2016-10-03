@@ -31,19 +31,17 @@ CMD ["/sbin/my_init"]
 RUN mkdir -p /home/app/codemp
 WORKDIR /home/app/codemp
 
-# Copy the Gemfile as well as the Gemfile.lock and install
-# the RubyGems. This is a separate step so the dependencies
-# will be cached unless changes to one of those two files
-# are made.
-COPY Gemfile Gemfile.lock ./ 
-RUN gem install bundler && bundle install --jobs 20 --retry 5 --without development test
-
 # Set Rails to run in production
 ENV RAILS_ENV production 
 ENV RACK_ENV production
 
+# Copy the Gemfile as well as the Gemfile.lock and install
+# the RubyGems. This is a separate step so the dependencies
+# will be cached unless changes to one of those two files
+# are made.
 # Copy the main application.
 COPY . ./
+RUN gem install bundler && bundle install --jobs 20 --retry 5 --without development test
 
 # Precompile Rails assets
 RUN bundle exec rails assets:precompile
