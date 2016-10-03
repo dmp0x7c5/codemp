@@ -1,0 +1,3 @@
+[submodule "railsbox/ansible/roles/ansible-docker"]
+	path = railsbox/ansible/roles/ansible-docker
+	url = git@github.com:nexeck/ansible-docker.git

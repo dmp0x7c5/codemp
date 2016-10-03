@@ -1,0 +1,5 @@
+- name: Create build codemp_prod_image
+  command: docker build -f /codemp/current/docker/Dockerfile.prod -t codemp_prod_image /codemp/current/
+
+- name: Run docker codemp_prod_container
+  command: docker run -p 127.0.0.1:80:80 --name codemp_prod_container -t codemp_prod_image

@@ -1,0 +1,4 @@
+138.68.90.40 ansible_ssh_port=22
+
+[application]
+138.68.90.40
